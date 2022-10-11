@@ -5,10 +5,12 @@ import argparse
 
 
 ap = argparse.ArgumentParser()   
-ap.add_argument('-i', '--image', help="Image Path")
+# providing specific path to get image
+ap.add_argument('-i', '--image', help="this is for Image Path")
 args = vars(ap.parse_args())
 img_path = args['image']
 img = cv2.imread(img_path)
 
 index=["color","color_name","hex","R","G","B"]
+# reading color's attribute csv file'
 csv = pd.read_csv('colors.csv', names=index, header=None)
